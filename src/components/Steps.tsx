@@ -47,9 +47,9 @@ const Steps = () => {
                 aria-hidden="true"
               />
 
-              <span className={cn(i != 0 ? 'lg:pl-9' : '', 'flex items-center px-6 py-4 text-sm font-medium')}>
+              <span className={cn(i !== 0 ? 'lg:pl-9' : '', 'flex items-center px-6 py-4 text-sm font-medium')}>
 
-                <span className="shrink-0">
+                <span className="flex-shrink-0">
 
                     <img src={imgPath} className={cn("flex h-20 w-20 object-contain items-center justify-center", {
                         "border-none": isCompleted,
@@ -58,7 +58,7 @@ const Steps = () => {
 
                 </span>
                 
-                <span className="ml-4 h-full mt-0.5 flex min-w-0 flex-col justify-center">
+                <span className="ml-4 h-full mt-0.5 flex  min-w-0 flex-col justify-center">
 
                     <span className={cn("text-sm font-semibold text-zinc-700", {
                         "text-primary": isCompleted,
