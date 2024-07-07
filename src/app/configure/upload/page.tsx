@@ -83,7 +83,7 @@ const Page = () => {
                 {isUploading ? (
                   <div className="flex flex-col items-center">
                     <p>Uploading...</p>
-                    <Progress value={uploadProgress} className="mt-2 w-40 h-2 bg-gray-300" />
+                    <Progress value={ uploadProgress} className="mt-2 w-40 h-2 bg-gray-300" />
                   </div>
                 ) : isPending ? (
                   <div className="flex flex-col items-center">
