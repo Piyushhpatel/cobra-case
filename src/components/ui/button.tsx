@@ -38,7 +38,7 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
-  isLoading: boolean;
+  isLoading?: boolean;
   loadingText?: string;
 }
 
@@ -46,7 +46,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
       className,
-      isLoading,
+      isLoading , 
       loadingText,
       variant,
       children,
@@ -66,7 +66,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {isLoading && loadingText ? loadingText : children}
         {isLoading ? (
           <span className="ml-1.5 flex items-center gap-1">
-            <span className="animate-flashing"></span>
+            <span className="animate-flashing w-1 h-1 bg-white rounded-full inline-block" />
+            <span className="animate-flashing w-1 h-1 delay-100 bg-white rounded-full inline-block" />
+            <span className="animate-flashing w-1 h-1 delay-200 bg-white rounded-full inline-block" />
           </span>
         ) : null}
       </Comp>
