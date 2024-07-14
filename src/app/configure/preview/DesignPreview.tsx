@@ -12,7 +12,7 @@ import { ArrowRight, Check } from "lucide-react";
 import { useEffect, useState } from "react";
 import Confetti from "react-dom-confetti";
 import { createCheckoutSession } from "./actions";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { error } from "console";
 import { useToast } from "@/components/ui/use-toast";
 import { useKindeBrowserClient } from '@kinde-oss/kinde-auth-nextjs'
@@ -20,7 +20,7 @@ import LoginModal from "@/components/LoginModal";
 
 const DesignPreview = ({ configuration }: { configuration: Configuration }) => {
   const [showConfetti, setShowConfetti] = useState<boolean>(false);
-  const router = useRouter();
+  // const router = useRouter();
   const {toast} = useToast();
   const {id} = configuration;
   const {user} = useKindeBrowserClient();
@@ -49,7 +49,7 @@ const DesignPreview = ({ configuration }: { configuration: Configuration }) => {
     mutationFn: createCheckoutSession,
     onSuccess: ({url}) => {
       if(url){
-        router.push(url);
+        // router.push(url);
       }
       else{
         throw new Error('Unable to retrieve Payment url')
